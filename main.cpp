@@ -1,6 +1,7 @@
 #include <iostream>
-
+#include "Sort.h"
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    int a[]={0,3,1,4,29,8,5,6};
+    insertSort(a,8);
     return 0;
 }

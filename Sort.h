@@ -57,3 +57,45 @@ void quickSort(int R[],int low,int high){
         quickSort(R,i+1,high);
     }
 }
+//选择排序
+void selectSort(int R[],int n){
+    int i,j,k;
+    int tmp;
+    for(i=0;i<n;++i){
+        k=i;
+        for(j=i+1;j<n;++j)
+            if(R[i]>R[j])
+                k=j;
+        tmp=R[j];
+        R[j]=R[i];
+        R[i]=tmp;
+    }
+}
+
+//堆排序
+void Shit(int R[],int low,int high){
+    int i=low,j=2*i,tmp=R[i];
+    while (j<=high){
+        if(j<high&&R[j]<R[j+1]) ++j;
+        if(tmp<R[j]){
+            R[i]=R[j];
+            i=j;
+            j=2*i;
+        } else break;
+    }
+    R[i]=tmp;
+};
+//堆排序主程序
+void heapSort(int R[],int n){
+    int i,tmp;
+    for(i=n/2;i>=0;--i){
+        Shit(R,i,n);
+    }
+    for(i=n;i>0;--i){
+        tmp=R[0];
+        R[0]=R[i];
+        R[i]=tmp;
+        Shit(R,0,i-1);
+    }
+
+}

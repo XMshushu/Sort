@@ -97,5 +97,16 @@ void heapSort(int R[],int n){
         R[i]=tmp;
         Shit(R,0,i-1);
     }
+}
 
+//真题仿造1
+void resort(int R[],int n){
+    int i=0,j=n-1,temp;
+    while (i<j){
+        while (i<n&&R[i]<0) ++i;
+        while (j>i&&R[j]>0) --j;
+        temp=R[i];
+        R[i++]=R[j];
+        R[j--]=temp;
+    }
 }

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Sort.h"
 int main() {
-    int a[]={1,-2,3,-4};
-    resort(a,4);
+    int a[]={0,3,1,4,29,8,5,6};
+    insertSort(a,8);
     return 0;
 }

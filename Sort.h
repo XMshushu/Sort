@@ -57,6 +57,47 @@ void quickSort(int R[],int low,int high){
         quickSort(R,i+1,high);
     }
 }
+//二路归并排序的合并算法
+void merge(int R[],int low,int mid,int high){
+    int i=mid+1,j,last=mid;
+    int temp;
+    while (i<=high&&R[i]<R[i-1]){
+        for(j=i;j>low;--j){
+            if(R[j]<R[j-1]){
+                temp=R[j];
+                R[j]=R[j-1];
+                R[j-1]=temp;
+            }
+        }
+        ++i;
+    }
+}
+//二路归并排序
+//空间复杂度n+log2n=O(n)
+void mergeSort(int R[],int low,int high){
+    if(low<high){
+        int mid=(high+low)/2;
+        mergeSort(R,low,mid);
+        mergeSort(R,mid+1,high);
+        merge(R,low,mid,high);
+    }
+}
+//第二种实现
+//void merge(int R[],int low,int mid,int high){
+//    int i,j,stop=low;
+//    int temp;
+//    for(i=mid+1;i<=high;++i){
+//        for(j=i;j>stop;--j){
+//            if(R[j]<R[j-1]){
+//                temp=R[j];
+//                R[j]=R[j-1];
+//                R[j-1]=temp;
+//            }else{
+//                stop=j+1;
+//            };
+//        }
+//    }
+//}
 //选择排序
 void selectSort(int R[],int n){
     int i,j,k;

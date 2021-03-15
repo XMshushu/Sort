@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="E:/Code/Sort/Search.h">
+			<Option target="Sort"/>
+		</Unit>
 		<Unit filename="E:/Code/Sort/Sort.h">
 			<Option target="Sort"/>
 		</Unit>
